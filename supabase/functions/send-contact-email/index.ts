@@ -1,5 +1,17 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 
+// HTML escape function to prevent XSS
+function escapeHtml(text: string): string {
+  const map: Record<string, string> = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;',
+  };
+  return text.replace(/[&<>"']/g, (char) => map[char]);
+}
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
@@ -49,6 +61,12 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Sending contact form email for:", name, "phone:", phone);
 
+    // Sanitize user inputs to prevent XSS
+    const safeName = escapeHtml(name);
+    const safePhone = escapeHtml(phone);
+    const safeEmail = email ? escapeHtml(email) : '';
+    const safeMessage = message ? escapeHtml(message) : '';
+
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -58,15 +76,15 @@ const handler = async (req: Request): Promise<Response> => {
       body: JSON.stringify({
         from: "שני רחום - מורה למתמטיקה <onboarding@resend.dev>",
         to: [CONTACT_EMAIL],
-        subject: `פנייה חדשה מהאתר: ${name}`,
+        subject: `פנייה חדשה מהאתר: ${safeName}`,
         html: `
           <div dir="rtl" style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
             <h1 style="color: #2563eb;">פנייה חדשה מהאתר</h1>
             <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px;">
-              <p><strong>שם:</strong> ${name}</p>
-              <p><strong>טלפון:</strong> ${phone}</p>
-              ${email ? `<p><strong>אימייל:</strong> ${email}</p>` : ''}
-              ${message ? `<p><strong>הודעה:</strong> ${message}</p>` : ''}
+              <p><strong>שם:</strong> ${safeName}</p>
+              <p><strong>טלפון:</strong> ${safePhone}</p>
+              ${safeEmail ? `<p><strong>אימייל:</strong> ${safeEmail}</p>` : ''}
+              ${safeMessage ? `<p><strong>הודעה:</strong> ${safeMessage}</p>` : ''}
             </div>
             <p style="color: #6b7280; margin-top: 20px;">נשלח מטופס יצירת קשר באתר</p>
           </div>
