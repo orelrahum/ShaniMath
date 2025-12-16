@@ -1,0 +1,4 @@
+project_id = "clyvhacrabarlfelyths"
+
+[functions.send-contact-email]
+verify_jwt = false
