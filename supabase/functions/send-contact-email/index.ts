@@ -75,7 +75,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         from: "שני רחום - מורה למתמטיקה <onboarding@resend.dev>",
-        to: [CONTACT_EMAIL],
+        to: CONTACT_EMAIL.split(',').map(e => e.trim()),
         subject: `פנייה חדשה מהאתר: ${safeName}`,
         html: `
           <div dir="rtl" style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
