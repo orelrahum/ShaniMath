@@ -9,7 +9,7 @@ export const testimonialsContent = {
       rating: 5
     },
     {
-      name: "רותם",
+      name: "אלכס",
       role: "הורה לתלמידה",
       content: "הדבקת אותה ברוח ההצטיינות. את נדירה, זה מדהים התהליך שעשית איתה ❤️",
       rating: 5
