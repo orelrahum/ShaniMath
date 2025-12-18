@@ -26,7 +26,9 @@ const AboutSection = () => {
               {aboutContent.mainText}
             </p>
             <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              <span className="font-semibold text-foreground">{aboutContent.education.firstDegree}</span> ו<span className="font-semibold text-foreground">{aboutContent.education.secondDegree}</span>.
+              <span className="font-semibold text-foreground">{aboutContent.education.firstDegree}</span>
+              <span className="font-semibold text-foreground"> ו</span>
+              <span className="font-semibold text-foreground">{aboutContent.education.secondDegree}</span>.
             </p>
           </div>
 
