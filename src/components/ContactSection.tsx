@@ -96,19 +96,25 @@ const ContactSection = () => {
           <div className="bg-background rounded-2xl p-8 shadow-card">
             <h3 className="text-xl font-bold text-foreground mb-6">{contactContent.form.title}</h3>
             
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5" noValidate>
               <div>
+                <label htmlFor="contact-name" className="sr-only">שם מלא (שדה חובה)</label>
                 <Input
+                  id="contact-name"
                   name="name"
                   placeholder={contactContent.form.placeholders.name}
                   value={formData.name}
                   onChange={handleChange}
                   className="h-12 bg-muted/50 border-border/50 text-right"
                   maxLength={100}
+                  aria-required="true"
+                  autoComplete="name"
                 />
               </div>
               <div>
+                <label htmlFor="contact-phone" className="sr-only">טלפון (שדה חובה)</label>
                 <Input
+                  id="contact-phone"
                   name="phone"
                   placeholder={contactContent.form.placeholders.phone}
                   type="tel"
@@ -117,10 +123,14 @@ const ContactSection = () => {
                   onChange={handleChange}
                   className="h-12 bg-muted/50 border-border/50 text-right"
                   maxLength={20}
+                  aria-required="true"
+                  autoComplete="tel"
                 />
               </div>
               <div>
+                <label htmlFor="contact-email" className="sr-only">אימייל (אופציונלי)</label>
                 <Input
+                  id="contact-email"
                   name="email"
                   placeholder={contactContent.form.placeholders.email}
                   type="email"
@@ -128,10 +138,13 @@ const ContactSection = () => {
                   onChange={handleChange}
                   className="h-12 bg-muted/50 border-border/50 text-right"
                   maxLength={255}
+                  autoComplete="email"
                 />
               </div>
               <div>
+                <label htmlFor="contact-message" className="sr-only">הודעה</label>
                 <Textarea
+                  id="contact-message"
                   name="message"
                   placeholder={contactContent.form.placeholders.message}
                   value={formData.message}
@@ -179,6 +192,7 @@ const ContactSection = () => {
               <div className="space-y-4">
                 <a 
                   href={`tel:+${PHONE_NUMBER}`}
+                  aria-label={`התקשרו אלינו: ${PHONE_DISPLAY}`}
                   className="flex flex-col items-center gap-3 p-4 rounded-xl bg-background shadow-soft hover:shadow-hover transition-all group text-center"
                 >
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">

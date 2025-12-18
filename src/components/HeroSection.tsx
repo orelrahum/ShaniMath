@@ -78,8 +78,9 @@ const HeroSection = () => {
               size="lg" 
               onClick={scrollToContact}
               className="w-full sm:w-auto text-lg px-10 py-7"
+              aria-label="מעבר לטופס יצירת קשר"
             >
-              <Phone className="ml-2 w-5 h-5" />
+              <Phone className="ml-2 w-5 h-5" aria-hidden="true" />
               {heroContent.buttons.primary}
             </Button>
             <Button 
@@ -87,8 +88,9 @@ const HeroSection = () => {
               size="lg" 
               onClick={openWhatsApp}
               className="w-full sm:w-auto text-lg px-10 py-7"
+              aria-label="פתיחת שיחה בוואטסאפ בחלון חדש"
             >
-              <MessageCircle className="ml-2 w-5 h-5" />
+              <MessageCircle className="ml-2 w-5 h-5" aria-hidden="true" />
               {heroContent.buttons.whatsapp}
             </Button>
           </div>

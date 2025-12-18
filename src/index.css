@@ -118,6 +118,51 @@
     @apply bg-background text-foreground font-heebo;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  /* נגישות - Focus Visible Styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+
+  /* הסתרת outline ברירת מחדל רק כשמשתמשים בעכבר */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* סגנון מיוחד לקישורים במצב פוקוס */
+  a:focus-visible {
+    @apply rounded-sm;
+  }
+
+  /* סגנון לכפתורים במצב פוקוס */
+  button:focus-visible {
+    @apply rounded-md;
+  }
+
+  /* Screen reader only class */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer utilities {
