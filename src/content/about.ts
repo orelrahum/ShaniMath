@@ -9,8 +9,8 @@ export const aboutContent = {
   strengths: [
     {
       iconType: "graduationCap",
-      title: "מומחיות אקדמית",
-      description: "תואר שני במתמטיקה עם התמחות בהוראה"
+      title: "ניסיון מוכח",
+      description: "למעלה מחמש שנות הוראה פרטית ובבית ספר"
     },
     {
       iconType: "heart",
