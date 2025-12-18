@@ -24,7 +24,7 @@ export const processContent = {
       iconType: "trendingUp",
       number: "04",
       title: "התקדמות והצלחה",
-      description: "ליווי צמוד, מעקב אחר התקדמות ושיפור מתמיד בביטחון ובציונים"
+      description: "ליווי צמוד, מעקב אחר התקדמות ושיפור בביטחון ובציונים"
     }
   ]
 };
