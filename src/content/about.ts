@@ -19,8 +19,8 @@ export const aboutContent = {
     },
     {
       iconType: "target",
-      title: "מיקוד בתוצאות",
-      description: "שיפור ממשי בציונים ובהבנה"
+      title: "השגת יעדים",
+      description: "ליווי אישי בדרך להצלחה"
     },
     {
       iconType: "clock",
