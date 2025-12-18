@@ -11,8 +11,8 @@ export const processContent = {
     {
       iconType: "calendar",
       number: "02",
-      title: "שיעור היכרות",
-      description: "פגישה קצרה להכרות, אבחון רמה והגדרת יעדים משותפים"
+      title: "שיעור ראשון",
+      description: "בשיעור הראשון נכיר, נאבחן את הרמה ונגדיר יעדים משותפים"
     },
     {
       iconType: "bookCheck",
