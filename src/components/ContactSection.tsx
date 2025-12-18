@@ -112,6 +112,7 @@ const ContactSection = () => {
                   name="phone"
                   placeholder={contactContent.form.placeholders.phone}
                   type="tel"
+                  dir="rtl"
                   value={formData.phone}
                   onChange={handleChange}
                   className="h-12 bg-muted/50 border-border/50 text-right"
