@@ -15,7 +15,7 @@ const Index = () => {
         <title>שני רחום | מורה פרטית למתמטיקה לכל גיל</title>
         <meta name="description" content="מורה פרטית למתמטיקה עם תואר שני ומעל 5 שנות ניסיון. שיעורים פרונטליים ואונליין לכל הגילאים - יסודי, תיכון, פסיכומטרי ואקדמיה." />
         <meta name="keywords" content="מורה פרטית למתמטיקה, שיעורים פרטיים מתמטיקה, הכנה לבגרות מתמטיקה, פסיכומטרי כמותי" />
-        <link rel="canonical" href="https://shani-math.co.il" />
+        <link rel="canonical" href="https://smartmath.co.il" />
       </Helmet>
 
       {/* Skip to main content link - נגישות */}
