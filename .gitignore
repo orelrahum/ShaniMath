@@ -28,5 +28,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# OG Image template (local only)
+# Image templates (local only)
 public/og-image-template.html
+public/whatsapp-profile-template.html
