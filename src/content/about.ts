@@ -5,7 +5,7 @@ export const aboutContent = {
     firstDegree: "בעלת תואר ראשון בהוראת מתמטיקה לעל יסודי בהצטיינות עם תעודת הוראה, מכללת לוינסקי לחינוך ",
     secondDegree: "תואר שני בחינוך מתמטי עם תזה, אוניברסיטת תל אביב"
   },
-  ctaButton: "לשיעור היכרות",
+  ctaButton:"לפרטים נוספים",
   strengths: [
     {
       iconType: "graduationCap",
